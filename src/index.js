@@ -32,16 +32,16 @@ productsFromServer.forEach(product => {
 
 let categories = [...categoriesSet];
 
-let reduxDebugger = process.env.NODE_ENV === "development" ?
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() :
-  {};
+// let reduxDebugger = process.env.NODE_ENV === "development" ?
+//   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() :
+//   {};
 
 let store = createStore(
   groceryListApp,
   {
     groceryList: productsFromServer
   },
-  reduxDebugger
+  // reduxDebugger
 );
 
 ReactDOM.render(
