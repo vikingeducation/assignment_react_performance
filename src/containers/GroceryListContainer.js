@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import GroceryList from "../components/GroceryList";
 import { purchaseProduct } from "../actions";
+import {createSelector} from 'reselect'
 
 const sortProducts = (products, sortFilter) => {
   // spread used in order to get react to re-render
@@ -74,16 +75,22 @@ const filterByPurchased = (products, filter) => {
   }
 };
 
-const getVisibleProducts = (products, filters) => {
-  let results = filterByPurchased(products, filters.purchased);
-  results = filterByCategory(results, filters.category);
-  results = sortProducts(results, filters.sort);
-  return results;
-};
+const getGroceryList = (state) => state.groceryList;
+const getProductFilters = (state) => state.productFilters
+
+const getVisibleProducts = createSelector(
+  [getGroceryList, getProductFilters],
+  (groceryList, productFilters) => {
+    let results = filterByPurchased(groceryList, productFilters.purchased);
+    results = filterByCategory(results, productFilters.category);
+    results = sortProducts(results, productFilters.sort);
+    return results;
+  }
+)
 
 const mapStateToProps = state => {
   return {
-    groceryList: getVisibleProducts(state.groceryList, state.productFilters)
+    groceryList: getVisibleProducts(state)
   };
 };
 
