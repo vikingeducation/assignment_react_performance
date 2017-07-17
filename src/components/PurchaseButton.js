@@ -1,18 +1,32 @@
-import React from "react";
+import React, {PureComponent} from "react";
 import PropTypes from "prop-types";
 import Button from "./elements/Button";
 
-const PurchaseButton = ({ purchased, onPurchaseClick }) => {
-  if (purchased) {
-    return <p className="text-muted">Purchased!</p>;
+class PurchaseButton extends PureComponent {
+  render() {
+    const { purchased, onPurchaseClick } = this.props;
+    if (purchased) {
+      return <p className="text-muted">Purchased!</p>;
+    }
+  
+    return (
+      <Button onClick={onPurchaseClick} color="success">
+        Purchase
+      </Button>
+    );
   }
+}
+// const PurchaseButton = ({ purchased, onPurchaseClick }) => {
+//   if (purchased) {
+//     return <p className="text-muted">Purchased!</p>;
+//   }
 
-  return (
-    <Button onClick={onPurchaseClick} color="success">
-      Purchase
-    </Button>
-  );
-};
+//   return (
+//     <Button onClick={onPurchaseClick} color="success">
+//       Purchase
+//     </Button>
+//   );
+// };
 
 PurchaseButton.propTypes = {
   purchased: PropTypes.bool.isRequired,
