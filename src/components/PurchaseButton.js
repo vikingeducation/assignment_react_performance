@@ -16,17 +16,6 @@ class PurchaseButton extends PureComponent {
     );
   }
 }
-// const PurchaseButton = ({ purchased, onPurchaseClick }) => {
-//   if (purchased) {
-//     return <p className="text-muted">Purchased!</p>;
-//   }
-
-//   return (
-//     <Button onClick={onPurchaseClick} color="success">
-//       Purchase
-//     </Button>
-//   );
-// };
 
 PurchaseButton.propTypes = {
   purchased: PropTypes.bool.isRequired,
