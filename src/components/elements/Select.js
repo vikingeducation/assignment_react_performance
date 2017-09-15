@@ -1,9 +1,6 @@
 import React from "react";
 
 class Select extends React.PureComponent {
-  constructor(props) {
-    super(props);
-  }
   render() {
     const { options, ...restOfProps } = this.props;
     const optionElements = options.map(option => (

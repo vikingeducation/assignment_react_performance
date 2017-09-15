@@ -1,9 +1,6 @@
 import React from "react";
 
 class Table extends React.PureComponent {
-  constructor(props) {
-    super(props);
-  }
   render() {
     const { headers, rows } = this.props;
     return (

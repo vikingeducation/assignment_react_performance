@@ -1,10 +1,12 @@
 import React, { Component } from "react";
-import App from "./components/App";
+import App from "../components/App";
 
-const compareDates = Array(10).fill(true).map((thing, index) => {
-  const year = 2017 - index;
-  return `${year}-01-01`;
-});
+const compareDates = Array(10)
+  .fill(true)
+  .map((thing, index) => {
+    const year = 2017 - index;
+    return `${year}-01-01`;
+  });
 
 class AppContainer extends Component {
   constructor() {

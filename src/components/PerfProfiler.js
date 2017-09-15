@@ -1,5 +1,4 @@
 import profiler from "../styles/profiler.css";
-// src/components/PerfProfiler.js
 import React, { PureComponent } from "react";
 import Perf from "react-addons-perf";
 

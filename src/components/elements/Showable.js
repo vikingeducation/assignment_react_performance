@@ -1,14 +1,11 @@
 import React from "react";
 
 class Showable extends React.PureComponent {
-  constructor(props) {
-    super(props);
-  }
   render() {
+    const { show, children } = this.props;
     if (!show) {
       return null;
     }
-    const { show, children } = this.props;
     return <div>{children}</div>;
   }
 }

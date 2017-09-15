@@ -1,9 +1,6 @@
 import React from "react";
 
 class JumbotronFluid extends React.PureComponent {
-  constructor(props) {
-    super(props);
-  }
   render() {
     const { heading, lead } = this.props;
     return (
